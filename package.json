@@ -1,0 +1,14 @@
+{
+  "name": "womens-shoe-store",
+  "version": "1.0.0",
+  "description": "Women's Shoe Store - Full Stack E-commerce Application",
+  "scripts": {
+    "install:all": "cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && npm start",
+    "dev": "cd server && npm run dev"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

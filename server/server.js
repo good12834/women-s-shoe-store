@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const path = require("path");
 const db = require("./config/db");
 
 dotenv.config();
@@ -35,6 +36,16 @@ app.use("/api/admin", require("./routes/admin"));
 app.use("/api/coupons", require("./routes/coupons"));
 app.use("/api/payment", require("./routes/payment"));
 app.use("/api/cart", require("./routes/cart"));
+
+// Serve static files from the React app in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../client/dist")));
+
+  // Handle React routing, return all requests to React app
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+  });
+}
 
 // Test DB Connection
 db.query("SELECT 1")
