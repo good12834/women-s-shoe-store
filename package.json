@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Women's Shoe Store - Full Stack E-commerce Application",
   "scripts": {
-    "install:all": "cd client && npm install && cd ../server && npm install",
-    "build": "cd client && npm install && npm run build",
-    "start": "cd server && npm start",
+    "install:all": "cd client && npm install --legacy-peer-deps && cd ../server && npm install",
+    "build": "cd client && npm install --legacy-peer-deps && npm run build",
+    "start": "cd server && npm install && npm start",
     "dev": "cd server && npm run dev"
   },
   "engines": {
